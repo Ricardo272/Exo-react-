@@ -1,17 +1,24 @@
 //*** fichier App.js ***
+import { useState } from 'react';
 import './App.css';
-import Header from './Header.js';
+import Home from './Home';
 
-function App() {
+function Home({ animate }) {
+  const [animation, setAnimation] = useState(true)
+  const toggleAnimation = () => {
+    console.log(animation)
+    setAnimation(animation => !animation)
+    console.log(animate)
+  }
   return (
     <div className="App">
-      <Header className="App-header" />
+      <Home animate={animation} />
       <button
         className="App-button"
-        onClick={event => alert(event.target.id)}>
+        onClick={toggleAnimation}>
         Modifier l’animation
       </button>
     </div>
   );
 }
-export default App;
+export default Home;
