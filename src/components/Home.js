@@ -8,7 +8,6 @@ function Home() {
         console.log(animation)
         setAnimation(animation => !animation)
     }
-
     return (
         <div>
             <div className="container">
@@ -16,11 +15,12 @@ function Home() {
                     className={`logo ${animation && "rotate"}`} alt="logo" />
                 <h1>TP React Développeur Web et Web Mob </h1>
             </div>
-            <button
-                className="App-button"
-                onClick={toggleAnimation}>
-                Modifier l’animation
-            </button>
+            <button className="App-button">
+                <button
+                    className="App-button"
+                    onClick={toggleAnimation}>
+                    Modifier l’animation
+                </button>            </button>
         </div >
     )
 }
